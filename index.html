@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./logo.jpg"/>
+    <link rel="stylesheet" href="./styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app"/>
+    
+    <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>UI ASSIGNMENT</title>
+
+    <script type="text/javascript">
+        /// some script
+        $(function () {
+            'use strict'
+          $("[data-trigger]").on("click", function(){
+                var trigger_id =  $(this).attr('data-trigger');
+                $(trigger_id).toggleClass("show");
+                $('body').toggleClass("offcanvas-active");
+            });
+            // close if press ESC button 
+            $(document).on('keydown', function(event) {
+                if(event.keyCode === 27) {
+                  $(".navbar-collapse").removeClass("show");
+                  $("body").removeClass("overlay-active");
+                }
+            });
+            // close button 
+            $(".btn-close").click(function(e){
+                $(".navbar-collapse").removeClass("show");
+                $("body").removeClass("offcanvas-active");
+            });
+        })       
+    </script>  
+    
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>   
+    <!-- NavBar Start -->
+    <div class="p-2">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./logo-white.svg" alt="drivEddy" width="90"></a>
+          <button class="navbar-toggler" type="button" data-trigger="#main_nav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class=" navbar-collapse" id="main_nav">
+                <div class="offcanvas-header py-5">
+                    <span class="container bg-dark rounded">
+                      <h3 class="text-info py-2 ml-3">MENU</h3>
+                      <button class="btn btn-danger btn-close close text-white" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </span>                 
+                </div>
+                <div class="container-fluid">
+                  <ul class="navbar-nav">
+                    <li class="nav-item mx-2"><a class="nav-link" aria-current="page" href="./index.html">Home</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Produkte</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Kalender</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Schuler</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Kollegen</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Buchungen</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#">Fortschritt</a></li>
+                  </ul>
+                </div>                
+                <div class="container-fluid ml-auto profile">
+                  <ul class="navbar-nav">
+                    <li class="nav-item mx-4 px-4 border-left offcanvas-name"><a class="nav-link" href="#">Weiterbildung</a></li>
+                  </ul>
+                  <a class="nav-link" href="#"><img src="profile.png" class="rounded-circle" width="35"/></a>
+                </div>            
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+        <div class="ml-5 pt-3"><h5 class="ml-5">Dashboard</h5></div>
+        <div class="mx-5">
+          <div class="ml-5 contact">
+            <div class="d-flex inline offcanvas-res p-2">
+              <div><h5>Übersicht deiner Fahrschulen<a data-toggle="collapse" href="#Collapse" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-4 text-info"></i></a></h5></div>
+              <div class="ml-auto mr-5"><button class="p-2 px-5 btn btn-info">Profilvorschau</button></div>
+            </div>
+            <div class="collapse show" id="Collapse">
+              <div class="d-flex inline offcanvas-col container-fluid">
+                <div>
+                  <p>Jede Fahrschule hat unterschiedliche Bedürfnisse an ein übersichtliches Dashboard. Auf dieser Seite findest eine Übersicht aller Funktionen und wertvolle Tipps, um deine Fahrschule besser online zu präsentieren</p>
+                </div>
+                <div class="container mr-3">
+                  <ul class="list-unstyled float-right mr-5"><li><a href="#" class="text-info">Profil bearbeiten</a></li></ul>
+                </div>
+              </div>
+              <div class="ml-3 mb-3 d-flex inline offcanvas-res">  
+                <div><img src="car_img.PNG" alt="CAR IMAGE" height="200" width="350"/></div>
+                <div class="mx-2">
+                  <ul class="list-unstyled p-2">
+                    <li><h5>Fahrschule Achselpeter</h5></li>
+                    <li><i class="fas fa-map-marker text-info pr-2"></i>Seddiner Straße 7 | 10135 Berlin</li>
+                    <li><i class="fas fa-phone text-info pr-2"></i>(030) 51 65 64 26</li>
+                    <li><i class="far fa-user text-info pr-2"></i>Achsel Peter Senior</li>
+                    <li><i class="far fa-envelope-open text-info pr-2"></i>achsel@peter.net</li>
+                    <li><i class="fas fa-globe text-info pr-2"></i>achselpetervollinfahrt.de</li>
+                    </ul>
+                </div> 
+              </div>
+            </div>                         
+          </div>
+        </div>
+
+        <div class="mx-5">
+          <div class="ml-5 contact">
+            <div class="d-flex inline p-2">
+              <div><h5>Verbessere dein Profiln</h5></div>
+              <div class="ml-auto mr-5"><a class="p-2 px-5 text-primary">Profilvorschau</a></div>
+            </div>            
+            <div class="d-flex inline offcanvas-res pb-2"> 
+              <div class="card mx-2" style="width: auto;">
+                <span class="pull-right clickable close-icon ml-auto px-2" data-effect="fadeOut"><i class="fa fa-times"></i></span>
+                <div class="card-body">
+                  <h5 class="card-title">Lade hochwertige Bilder deiner Fahrschule hoch</h5>
+                  <p class="card-text">Aktuell nutzt du eines unserer Beispiel: bilder. Um mehr Vertrauen für potenzielle Fahrschüler zu schaffen, empfehlen wir dir eigene Bilder hochzuladen:</p>
+                  <a href="#" class="btn btn-info px-5">Bilder hinzufügen</a>
+                </div>
+              </div>   
+
+              <div class="card mx-2" style="width: auto;">
+                <span class="pull-right clickable close-icon ml-auto px-2" data-effect="fadeOut"><i class="fa fa-times"></i></span>
+                <div class="card-body">
+                  <h5 class="card-title">Lade deine Kollegen zu drivEddy ein</h5>
+                  <p class="card-text">Um von unserer Software bestmöglich zu profitieren, nutzen all deine Kollegen drivEddy. Hier kannst du sie ganz einfach einladen.</p>
+                  <a href="#" class="btn btn-info px-5">Kollegen einladen</a>
+                </div>
+              </div>  
+
+              <div class="card mx-2 mr-5" style="width: auto;">
+                <span class="pull-right clickable close-icon ml-auto px-2" data-effect="fadeOut"><i class="fa fa-times"></i></span>
+                <div class="card-body">
+                  <h5 class="card-title">Erstelle Führerscheinpakete mit Preisersparnis</h5>
+                  <p class="card-text">Mach dein Angebot für Fahrschüler attraktiver in dem du Preisvorteile durch Paketbuchungen anbietest. Du bekommst dadurch einen geringeren Gesamtpreis, hast jedoch sofort die gesamte Summe und kannst deinen Cashflow besser planen</p>
+                  <a href="#" class="btn btn-outline-info">Neue Pakete hinzufügen</a>
+                </div>
+              </div>   
+
+            </div>            
+          </div>
+        </div>
+    </div>  
+
+    <div class="mx-5">
+      <div class="ml-5 d-flex inline offcanvas-res">
+        <div class="container-fluid contact pb-2">
+          <div class="d-flex inline p-2">
+            <div><h5>Stundenanfragen</h5></div>
+            <div class="ml-auto mr-3"><a class="p-2 text-primary">Alle Anfragen</a><a data-toggle="collapse" href="#Collapsest" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-2 text-primary"></i></a></div>
+          </div>
+          <div class="card collapse show" id="Collapsest" style="width: auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Achsel</span> mochte mit <span class="text-info">Peter</span> um 12:00 Uhr eine <span class="text-primary">Überlandfahrt</span> machen</li>
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Peter</span> möchte mit <span class="text-info">Silke</span> um 11:00 Uhr eine <span class="text-primary">Basisübungsstunde</span> machen</li>
+              <li class="list-group-item"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Rick</span> möchte mit <span class="text-info">Morty</span> um 09:00 Uhr eine <span class="text-primary">Überlandfahrt</span> machen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid contact pb-2">
+          <div class="d-flex inline p-2">
+            <div><h5>Schüleranfragen</h5></div>
+            <div class="ml-auto mr-3 text-primary"><a class="p-2 text-primary">Alle Anfragen</a>|<a class="p-2 text-primary">Alle Produkte</a><a data-toggle="collapse" href="#Collapsesu" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-2 text-primary"></i></a></div>
+          </div>         
+          <div class="card collapse show" id="Collapsesu" style="width: auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-bottom border-primary"><img class="mr-2" src="avator_icon.png" width="30" height="30"/><span class="text-primary">Kelvin Ray</span> möchte <span class="text-info">Klasse B</span> absolvieren</li>
+              <li class="list-group-item border-bottom border-primary"><img class="mr-2" src="avator_icon.png" width="30" height="30"/><span class="text-primary">Alvarez Acid Gonzales </span>möchte <span class="text-info">Klasse A</span> absolvieren</li>
+              <li class="list-group-item"><img class="mr-2" src="avator_icon.png" width="30" height="30"/><span class="text-primary">Jordy Jamesson </span>möchte einen <span class="text-info">Auffrischungskurs</span> absolvieren</li>
+            </ul>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="mx-5 my-4">
+      <div class="ml-5 d-flex inline offcanvas-res">
+
+        <div class="container-fluid contact pb-2">
+            <div class="d-flex inline p-2">
+              <div><h5>Kalender</h5></div>
+              <div class="ml-auto mr-3 text-primary"><a class="p-2 text-primary">Kalender</a>|<a class="p-2 text-primary">Heute</a><a data-toggle="collapse" href="#Collapseka" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-2 text-primary"></i></a></div>
+            </div> 
+          <div class="card collapse show mt-3" id="Collapseka" style="width: auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Achsel</span> hat eine Obertandfahrt mit <span class="text-info">Peter</span> um 12:00 Uhr</li>
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Peter</span> hat eine Basisübungsstunde mit <span class="text-info">Silie</span> um 11:00 Uhr</li>
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Rick</span> hat eine Oberlandfahrt mit <span class="text-info">Morty</span> um 09:00 Uhr</li>
+              <li class="list-group-item border-bottom border-primary"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Rick</span> hat eine Überlandfahrt mit <span class="text-info">Morty</span> um 09:00 Uhr</li>
+              <li class="list-group-item"><i class="far fa-calendar-alt text-info p-2"></i><span class="text-primary">Rick</span> hat eine Überlandfahrt mit <span class="text-info">Morty</span> um 09:00 Uhr</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid ml-3 contact pb-2">
+          <div class="d-flex inline p-2">
+            <div><h5>Schülerfortschritt</h5></div>
+            <div class="ml-auto mr-3 text-primary"><a class="p-2 text-primary">Alle Schüler</a><a data-toggle="collapse" href="#Collapsesuh" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-2 text-primary"></i></a></div>
+          </div> 
+          <div class="card collapse show" id="Collapsesuh" style="width: auto;">
+            <ul class="list-group list-group-flush">             
+              <li class="list-group-item d-flex inline">
+                <div class="container-fluid d-flex inline">
+                  <div><img class="mr-2" src="avator_icon1.jpg" width="30" height="30"/></div>
+                  <div class="text-primary">Alle Schüler</div>
+                  <div class="ml-auto">Fortschritt</div>                  
+                </div> 
+                <div class="container-fluid">
+                  <div class="progress my-1" style="height: 8px;">
+                    <div class="progress-bar bg-primary" style="width: 80%;"></div>
+                  </div>           
+                  <div class="container-fluid d-flex inline">
+                    <div class="container-fluid"><small><small>Bezablne Stunden</small></small></div>
+                    <div class="container-fluid">
+                      <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-info" style="width: 35%;"></div>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>                            
+              </li>
+              <li class="list-group-item d-flex inline">
+                <div class="container-fluid d-flex inline">
+                  <div><img class="mr-2" src="avator_icon1.jpg" width="30" height="30"/></div>
+                  <div class="text-primary">Denise Diesel</div>
+                  <div class="ml-auto">Fortschritt</div>                  
+                </div> 
+                <div class="container-fluid">
+                  <div class="progress my-1" style="height: 8px;">
+                    <div class="progress-bar bg-primary" style="width: 90%;"></div>
+                  </div>           
+                  <div class="container-fluid d-flex inline">
+                    <div class="container-fluid"><small><small>Bezablne Stunden</small></small></div>
+                    <div class="container-fluid">
+                      <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-info" style="width: 50%;"></div>
+                      </div>
+                    </div>                    
+                  </div> 
+                </div>                            
+              </li>
+              <li class="list-group-item d-flex inline">
+                <div class="container-fluid d-flex inline">
+                  <div><img class="mr-2" src="avator_icon1.jpg" width="30" height="30"/></div>
+                  <div class="text-primary">Gunter golf</div>
+                  <div class="ml-auto">Fortschritt</div>                  
+                </div> 
+                <div class="container-fluid">
+                  <div class="progress my-1" style="height: 8px;">
+                    <div class="progress-bar bg-primary" style="width: 85%;"></div>
+                  </div>           
+                  <div class="container-fluid d-flex inline">
+                    <div class="container-fluid"><small><small>Bezablne Stunden</small></small></div>
+                    <div class="container-fluid">
+                      <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-info" style="width: 85%;"></div>
+                      </div>
+                    </div>                    
+                  </div> 
+                </div>                            
+              </li>
+              <li class="list-group-item d-flex inline">
+                <div class="container-fluid d-flex inline">
+                  <div><img class="mr-2" src="avator_icon1.jpg" width="30" height="30"/></div>
+                  <div class="text-primary">Ryanna Romeo</div>
+                  <div class="ml-auto">Fortschritt</div>                  
+                </div> 
+                <div class="container-fluid">
+                  <div class="progress my-1" style="height: 8px;">
+                    <div class="progress-bar bg-primary" style="width: 70%;"></div>
+                  </div>           
+                  <div class="container-fluid d-flex inline">
+                    <div class="container-fluid"><small><small>Bezablne Stunden</small></small></div>
+                    <div class="container-fluid">
+                      <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-info" style="width: 50%;"></div>
+                      </div>
+                    </div>                    
+                  </div> 
+                </div>                            
+              </li>
+              <li class="list-group-item d-flex inline">
+                <div class="container-fluid d-flex inline">
+                  <div><img class="mr-2" src="avator_icon1.jpg" width="30" height="30"/></div>
+                  <div class="text-primary">Matso Bishy</div>
+                  <div class="ml-auto">Fortschritt</div>                  
+                </div> 
+                <div class="container-fluid">
+                  <div class="progress my-1" style="height: 8px;">
+                    <div class="progress-bar bg-primary" style="width: 50%;"></div>
+                  </div>
+                  <div class="container-fluid d-flex inline">
+                    <div class="container-fluid"><small><small>Bezablne Stunden</small></small></div>
+                    <div class="container-fluid">
+                      <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-info" style="width: 100%;"></div>
+                      </div>
+                    </div>                    
+                  </div>           
+                  
+                </div>                            
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 my-4">
+      <div class="ml-5 d-flex inline offcanvas-res">
+
+        <div class="container-fluid contact pb-2">
+          <div class="d-flex inline p-2">
+            <div><h5>Kollegen</h5></div>
+            <div class="ml-auto mr-3 text-primary"><a class="p-2 text-primary">Übersicht</a>|<a class="p-2 text-primary">Alle Kollegen</a><a data-toggle="collapse" href="#Collapseko" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="fas fa-chevron-down pl-2 text-primary"></i></a></div>
+          </div> 
+          <div class="card collapse show" id="Collapseko" style="width: auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-bottom border-primary"><img class="mr-2" src="avator_icon.png" width="30" height="30"/><span class="text-primary">Ich</span> habe 12 Schüler und noch 6 freie Stunden diese Woche</li>
+              <li class="list-group-item border-bottom border-primary"><img class="mr-2" src="avator_icon.png" width="30" height="30"/><span class="text-primary">Peter</span> Pubic hat 7 Schüler und noch 10 freie Stunden diese Woche</li>
+              <li class="list-group-item"><i class="fas fa-search text-info p-2"></i>Du willst expandieren? Wir helfen dir bei der <span class="text-primary">Fahrleh rersuche</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid ml-3">
+          <div class="d-flex inline p-2">
+          </div> 
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+      $('.close-icon').on('click',function() {
+        $(this).closest('.card').fadeOut();
+      })
+    </script>
+  </body>
+</html>
